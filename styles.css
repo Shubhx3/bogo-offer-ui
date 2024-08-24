@@ -1,0 +1,272 @@
+/* Font import */
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter.ttc') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global styles */
+:root {
+    --primary-color: #ff6b82;
+    --text-color: #333;
+    --background-color: #ffffff;
+    --border-color: #e0e0e0;
+    --body-background: #f6f6f7;
+    --selected-background: #fff9fa;
+}
+
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: var(--body-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Main container styles */
+.bogo-container {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 28px 48px;
+    width: 100%;
+    max-width: 438px;
+    max-height: 596px;
+    overflow-y: auto;
+}
+
+/* Bogo title styles */
+h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Option styles */
+.option {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.option-content {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.discount-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+
+/* SVG background after discount label */
+.discount-label::after {
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-image: url('data:image/svg+xml,<svg width="2" height="72" viewBox="0 0 2 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1C1 28.7272 1 71 1 71" stroke="url(%23paint0_linear_1_30)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/><defs><linearGradient id="paint0_linear_1_30" x1="1.5" y1="29" x2="1" y2="29" gradientUnits="userSpaceOnUse"><stop stop-color="%23F7F8FF"/><stop offset="1" stop-color="white"/></linearGradient></defs></svg>');
+}
+
+/* Option not selected styles */
+.option:not(.selected) .option-content {
+    margin-left: 72px;
+}
+
+.option-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.option-price {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.customization {
+    display: none;
+    margin-top: 16px;
+}
+
+.option.selected {
+    background-color: var(--selected-background);
+}
+
+.option.selected .discount-label {
+    display: none;
+}
+
+.option.selected .customization {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.custom-option {
+    display: flex;
+    align-items: center;
+}
+
+.custom-option label {
+    font-size: 14px;
+    margin-right: 8px;
+    min-width: 30px;
+}
+
+.custom-option select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Radio button styles */
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    outline: none;
+    position: relative;
+}
+
+input[type="radio"]::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.discount-tag {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.discounted-price {
+    font-weight: bold;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Order summary styles */
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.free-delivery {
+    color: var(--primary-color);
+}
+
+#add-to-cart {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Powered by styles */
+.powered-by {
+    text-align: left;
+    font-size: 14spx;
+    color: #999;
+    margin-top: 20px;
+}
+
+.pumper {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.popular-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    width: auto;
+}
+
+.discount-tag {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.discounted-price {
+    font-weight: bold;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+    margin-left: 5px;
+}
