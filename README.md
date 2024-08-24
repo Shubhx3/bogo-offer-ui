@@ -1,5 +1,8 @@
 # BOGO Offer UI Documentation
 
+## Live Demo
+Check out the live demo of the BOGO Offer UI here: https://bogo-ui.web.app/
+
 ## Project Overview
 
 This project implements a Buy One Get One (BOGO) offer user interface for an e-commerce platform. It features a responsive design with customizable product options and an interactive selection process.
