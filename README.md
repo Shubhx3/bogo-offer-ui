@@ -7,6 +7,21 @@ Check out the live demo of the BOGO Offer UI here: https://bogo-ui.web.app/
 
 This project implements a Buy One Get One (BOGO) offer user interface for an e-commerce platform. It features a responsive design with customizable product options and an interactive selection process.
 
+## Features
+
+- Multiple BOGO offer options with different discounts
+- Interactive UI with expandable options
+- Customization options for each product (size and color)
+- Real-time price updates
+- "Add to Cart" functionality
+- Responsive design for various screen sizes
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
 ## Project Structure
 
 The project consists of three main files:
@@ -17,9 +32,16 @@ The project consists of three main files:
 
 ## Setup Instructions
 
-1. Clone the repository or download the project files.
-2. Ensure all files (`index.html`, `styles.css`, and `script.js`) are in the same directory.
-3. Open `index.html` in a web browser to view the BOGO offer UI.
+1. Clone the repository:
+   ```
+   git clone https://github.com/Shubhx3/bogo-offer-ui.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd bogo-offer-ui
+   ```
+3. Open `index.html` in a web browser to view the BOGO offer UI locally.
+
 
 ## Key Components
 
@@ -71,6 +93,10 @@ To customize the UI:
 - Adjust offer options, prices, and customization choices in the HTML structure.
 - Extend JavaScript functionality in `script.js` for additional features or integrations.
 
+## Acknowledgments
+
+- Font used: Inter ([https://rsme.me/inter/](https://rsms.me/inter/))
+
 ## Best Practices
 
 This project follows several best practices:
@@ -84,3 +110,7 @@ This project follows several best practices:
 ## Browser Compatibility
 
 This UI is designed to work on modern web browsers. For optimal experience, use the latest versions of Chrome, Firefox, Safari, or Edge.
+
+## Contact
+
+For any queries or suggestions, please open an issue in this repository.
